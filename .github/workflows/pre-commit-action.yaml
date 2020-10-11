@@ -1,9 +1,11 @@
+---
 name: pre-commit
 
 on:
   push:
     branches:
       - main
+      - gh-actions
   pull_request:
     branches:
       - main
