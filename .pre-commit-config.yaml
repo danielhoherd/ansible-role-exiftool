@@ -14,6 +14,8 @@ repos:
       - id: check-yaml
         args: ['--allow-multiple-documents']
       - id: end-of-file-fixer
+      - id: file-contents-sorter
+        files: .gitignore
       - id: mixed-line-ending
         args: ['--fix=lf' ]
       - id: sort-simple-yaml
@@ -43,4 +45,3 @@ repos:
       - id: remove-en-dashes
       - id: remove-unicode-non-breaking-spaces
       - id: remove-unicode-zero-width-non-breaking-spaces
-      - id: sort-gitignore
