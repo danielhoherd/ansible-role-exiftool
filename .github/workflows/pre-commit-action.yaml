@@ -30,4 +30,5 @@ jobs:
           python -m pip install poetry
       - name: Lint with pre-commit
         run: |
+          poetry install
           poetry run molecule test --all
