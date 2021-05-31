@@ -11,8 +11,9 @@ pre-commit = "^2.13.0"
 pytest = "^6.2.4"
 molecule = "^3.2.3"
 docker = "^5.0.0"
-testinfra = "^6.0.0"
 molecule-docker = "^0.3.4"
+pytest-testinfra = "^6.3.0"
+testinfra = "^6.0.0"
 
 [tool.black]
 line-length = 132
