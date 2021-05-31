@@ -3,7 +3,6 @@
 galaxy_info:
   author: Thomas Lehoux, Daniel Hoherd
   description: Role to install ExifTool.
-  role_name: exiftool
   license: BSD
   min_ansible_version: 2.1
   platforms:
