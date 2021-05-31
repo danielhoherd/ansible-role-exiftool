@@ -4,9 +4,6 @@
 help: ## Print Makefile help.
 	@grep -hE '^[a-z0-9A-Z._-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-16s\033[0m %s\n", $$1, $$2}'
 
-PYTHON3_USER_BASE := $(shell python3 -m site --user-base 2>/dev/null)
-PATH              := "${PYTHON3_USER_BASE}/bin:${PATH}"
-
 .PHONY: install-hooks
 install-hooks: .install-hooks ## Install git hooks
 .install-hooks: requirements
