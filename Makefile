@@ -33,3 +33,10 @@ requirements: .requirements ## Install software requirements
 	pip3 install --user --upgrade "poetry>=1.1.2"
 	poetry install
 	touch .requirements
+
+.PHONY: poetry-clean
+clean: ## Destroy poetry virtual environment
+	poetry env list 2>/dev/null | awk '{print $$1}' | xargs -n1 poetry env remove || true
+	rm -f poetry.lock
+	find $$PWD -name 'Image-ExifTool*.tar.gz' -delete
+	rm -f .requirements .install-hooks
