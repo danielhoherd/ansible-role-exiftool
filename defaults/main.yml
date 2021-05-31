@@ -1,6 +1,6 @@
 ---
 # defaults file for danielhoherd.exiftool
-exiftool_version: "12.25" # 12.25 is NOT a production release, but 12.24 fixed an arbitrary code execution vulnerability so this is an exception to the always-install-production-releases rule
+exiftool_version: "12.26"
 exiftool_binary_name: Image-ExifTool-{{ exiftool_version }}
 exiftool_download_url: https://exiftool.org/{{ exiftool_binary_name }}.tar.gz
 exiftool_verify_checksum: false
