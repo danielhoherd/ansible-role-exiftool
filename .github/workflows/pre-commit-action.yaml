@@ -23,6 +23,7 @@ jobs:
           python -m pip install pre-commit poetry
       - name: Lint with pre-commit
         run: |
+          poetry install
           poetry run pre-commit run --all-files
   molecule:
     runs-on: ubuntu-latest
