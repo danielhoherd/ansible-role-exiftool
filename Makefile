@@ -15,10 +15,6 @@ install-hooks: .install-hooks ## Install git hooks
 test: requirements ## Run tests
 	poetry run molecule test --all
 
-.PHONY: test-xenial
-test-xenial: requirements ## Run tests on xenial
-	poetry run molecule test -s xenial
-
 .PHONY: test-bionic
 test-bionic: requirements ## Run tests on bionic
 	poetry run molecule test -s bionic

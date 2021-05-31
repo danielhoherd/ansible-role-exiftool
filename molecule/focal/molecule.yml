@@ -7,7 +7,7 @@ driver:
   name: docker
 platforms:
   - name: instance
-    image: ubuntu:xenial
+    image: ubuntu:focal
 provisioner:
   name: ansible
   inventory:
