@@ -26,7 +26,7 @@ test-focal: requirements ## Run tests on focal
 .PHONY: requirements
 requirements: .requirements ## Install software requirements
 .requirements:
-	pip3 install --user --upgrade "poetry>=1.1.2"
+	pip3 install --user --upgrade "poetry>=1.1.6"
 	poetry install
 	touch .requirements
 

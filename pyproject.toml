@@ -22,5 +22,5 @@ include = '\.pyi?$'
 exclude = '(venv|.vscode)'
 
 [build-system]
-requires = ["poetry>=1.1.2"]
+requires = ["poetry>=1.1.6"]
 build-backend = "poetry.masonry.api"
