@@ -15,10 +15,6 @@ install-hooks: .install-hooks ## Install git hooks
 test: requirements ## Run tests
 	poetry run molecule test --all
 
-.PHONY: test-xenial
-test-xenial: requirements ## Run tests on xenial
-	poetry run molecule test -s xenial
-
 .PHONY: test-bionic
 test-bionic: requirements ## Run tests on bionic
 	poetry run molecule test -s bionic
@@ -30,6 +26,13 @@ test-focal: requirements ## Run tests on focal
 .PHONY: requirements
 requirements: .requirements ## Install software requirements
 .requirements:
-	pip3 install --user --upgrade "poetry>=1.1.2"
+	pip3 install --user --upgrade "poetry>=1.1.6"
 	poetry install
 	touch .requirements
+
+.PHONY: poetry-clean
+clean: ## Destroy poetry virtual environment
+	poetry env list 2>/dev/null | awk '{print $$1}' | xargs -n1 poetry env remove || true
+	rm -f poetry.lock
+	find $$PWD -name 'Image-ExifTool*.tar.gz' -delete
+	rm -f .requirements .install-hooks

@@ -12,5 +12,6 @@ rules:
   brackets:
     max-spaces-inside: 1
     level: error
+  comments: disable
   line-length: disable
   truthy: disable

@@ -6,14 +6,14 @@ authors = ["Thomas Lehoux, Daniel Hoherd"]
 
 [tool.poetry.dependencies]
 python = "^3.6.1"
-ansible = "^2.10.0"
-
-[tool.poetry.dev-dependencies]
-pre-commit = "^2.7.1"
-testinfra = "^5.3.1"
-docker = "^4.3.1"
-molecule = "^3.0.8"
-pytest = "^6.1.1"
+ansible = "^2.10.7"
+pre-commit = "^2.13.0"
+pytest = "^6.2.4"
+molecule = "^3.2.3"
+docker = "^5.0.0"
+molecule-docker = "^0.3.4"
+pytest-testinfra = "^6.3.0"
+testinfra = "^6.0.0"
 
 [tool.black]
 line-length = 132
@@ -22,5 +22,5 @@ include = '\.pyi?$'
 exclude = '(venv|.vscode)'
 
 [build-system]
-requires = ["poetry>=1.1.2"]
+requires = ["poetry>=1.1.6"]
 build-backend = "poetry.masonry.api"
