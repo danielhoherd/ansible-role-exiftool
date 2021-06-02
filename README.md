@@ -1,6 +1,6 @@
 # ExifTool
 
-<https://galaxy.ansible.com/danielhoherd/ansible-role-exiftool/>
+<https://galaxy.ansible.com/danielhoherd/ansible_role_exiftool>
 
 This is an Ansible role to install ExifTool (<https://exiftool.org>)
 
