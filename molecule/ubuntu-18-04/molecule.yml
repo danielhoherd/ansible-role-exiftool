@@ -1,13 +1,13 @@
 ---
 scenario:
-  name: focal
+  name: ubuntu-18-04
 dependency:
   name: galaxy
 driver:
   name: docker
 platforms:
   - name: instance
-    image: ubuntu:focal
+    image: ubuntu:18.04
 provisioner:
   name: ansible
   inventory:

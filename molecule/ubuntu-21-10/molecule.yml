@@ -1,13 +1,13 @@
 ---
 scenario:
-  name: bionic
+  name: ubuntu-21-10
 dependency:
   name: galaxy
 driver:
   name: docker
 platforms:
   - name: instance
-    image: ubuntu:bionic
+    image: ubuntu:21.10
 provisioner:
   name: ansible
   inventory:

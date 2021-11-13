@@ -15,13 +15,13 @@ install-hooks: .install-hooks ## Install git hooks
 test: requirements ## Run tests
 	poetry run molecule test --all
 
-.PHONY: test-bionic
-test-bionic: requirements ## Run tests on bionic
-	poetry run molecule test -s bionic
+.PHONY: test-ubuntu-18-04
+test-ubuntu-18-04: requirements ## Run tests on ubuntu-18-04
+	poetry run molecule test -s ubuntu-18-04
 
-.PHONY: test-bionic
-test-focal: requirements ## Run tests on focal
-	poetry run molecule test -s focal
+.PHONY: test-ubuntu-18-04
+test-ubuntu-20-04: requirements ## Run tests on ubuntu-20-04
+	poetry run molecule test -s ubuntu-20-04
 
 .PHONY: requirements
 requirements: .requirements ## Install software requirements

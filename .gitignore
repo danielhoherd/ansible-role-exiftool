@@ -12,6 +12,7 @@
 .vagrant
 __pycache__
 build/
+Image-Exiftool-*
 logs/
 meta/.galaxy_install_info
 poetry.lock
