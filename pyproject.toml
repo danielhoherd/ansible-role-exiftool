@@ -5,22 +5,22 @@ description = "Role to install ExifTool."
 authors = ["Thomas Lehoux, Daniel Hoherd"]
 
 [tool.poetry.dependencies]
-python = "^3.6.1"
+python = "^3.9.0"
 ansible = "^2.10.7"
-pre-commit = "^2.13.0"
-pytest = "^6.2.4"
-molecule = "^3.2.3"
-docker = "^5.0.0"
-molecule-docker = "^0.3.4"
-pytest-testinfra = "^6.3.0"
+pre-commit = "^2.15.0"
+pytest = "^6.2.5"
+molecule = "^3.5.2"
+docker = "^5.0.3"
+molecule-docker = "^1.1.0"
+pytest-testinfra = "^6.4.0"
 testinfra = "^6.0.0"
 
 [tool.black]
 line-length = 132
-target-version = ['py36', 'py37', 'py38']
+target-version = ['py38', 'py39']
 include = '\.pyi?$'
 exclude = '(venv|.vscode)'
 
 [build-system]
-requires = ["poetry>=1.1.6"]
+requires = ["poetry>=1.1.11"]
 build-backend = "poetry.masonry.api"
