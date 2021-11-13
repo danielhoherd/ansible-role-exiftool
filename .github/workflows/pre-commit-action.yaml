@@ -24,7 +24,7 @@ jobs:
           poetry install
       - name: Run pre-commit
         run: |
-          poetry run pre-commit run --all-files
+          poetry run pre-commit run --all-files -v
   molecule:
     runs-on: ubuntu-latest
     steps:
