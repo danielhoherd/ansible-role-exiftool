@@ -1,6 +1,8 @@
 ---
 # https://galaxy.ansible.com/docs/contributing/creating_role.html#role-metadata
 galaxy_info:
+  role_name: exiftool
+  namespace: danielhoherd
   author: Thomas Lehoux, Daniel Hoherd
   description: Role to install ExifTool.
   license: BSD
