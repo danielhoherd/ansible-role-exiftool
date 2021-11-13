@@ -2,7 +2,7 @@
 
 .PHONY: help
 help: ## Print Makefile help.
-	@grep -hE '^[a-z0-9A-Z._-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-16s\033[0m %s\n", $$1, $$2}'
+	@grep -hE '^[a-z0-9A-Z._-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-19s\033[0m %s\n", $$1, $$2}'
 
 .PHONY: install-hooks
 install-hooks: .install-hooks ## Install git hooks
@@ -15,13 +15,17 @@ install-hooks: .install-hooks ## Install git hooks
 test: requirements ## Run tests
 	poetry run molecule test --all
 
-.PHONY: test-bionic
-test-bionic: requirements ## Run tests on bionic
-	poetry run molecule test -s bionic
+.PHONY: test-ubuntu-18-04
+test-ubuntu-18-04: requirements ## Run tests on ubuntu-18-04
+	poetry run molecule test -s ubuntu-18-04
 
-.PHONY: test-bionic
-test-focal: requirements ## Run tests on focal
-	poetry run molecule test -s focal
+.PHONY: test-ubuntu-20-04
+test-ubuntu-20-04: requirements ## Run tests on ubuntu-20-04
+	poetry run molecule test -s ubuntu-20-04
+
+.PHONY: test-ubuntu-21-10
+test-ubuntu-21-10: requirements ## Run tests on ubuntu-21-10
+	poetry run molecule test -s ubuntu-21-10
 
 .PHONY: requirements
 requirements: .requirements ## Install software requirements
