@@ -10,7 +10,7 @@ repos:
       - id: prettier
         args: ["--print-width=135"]
   - repo: https://github.com/ansible/ansible-lint
-    rev: v5.3.0
+    rev: v5.3.1
     hooks:
       - id: ansible-lint
         files: '\.ya?ml$'
