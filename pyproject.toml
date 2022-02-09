@@ -6,13 +6,13 @@ authors = ["Thomas Lehoux, Daniel Hoherd"]
 
 [tool.poetry.dependencies]
 python = "^3.9.0"
-ansible = "^2.10.7"
-pre-commit = "^2.16.0"
-pytest = "^6.2.5"
-molecule = "^3.5.2"
+ansible = "^5.3.0"
+pre-commit = "^2.17.0"
+pytest = "^7.0.0"
+molecule = "^3.6.0"
 docker = "^5.0.3"
 molecule-docker = "^1.1.0"
-pytest-testinfra = "^6.4.0"
+pytest-testinfra = "^6.5.0"
 
 [tool.black]
 line-length = 132
