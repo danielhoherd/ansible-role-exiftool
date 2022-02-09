@@ -23,9 +23,9 @@ test-ubuntu-18-04: requirements ## Run tests on ubuntu-18-04
 test-ubuntu-20-04: requirements ## Run tests on ubuntu-20-04
 	poetry run molecule test -s ubuntu-20-04
 
-.PHONY: test-ubuntu-21-10
-test-ubuntu-21-10: requirements ## Run tests on ubuntu-21-10
-	poetry run molecule test -s ubuntu-21-10
+.PHONY: test-ubuntu-22-04
+test-ubuntu-22-04: requirements ## Run tests on ubuntu-22-04
+	poetry run molecule test -s ubuntu-22-04
 
 .PHONY: requirements
 requirements: .requirements ## Install software requirements
