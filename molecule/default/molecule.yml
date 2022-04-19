@@ -1,13 +1,17 @@
 ---
 scenario:
-  name: ubuntu-18-04
+  name: default
 dependency:
   name: galaxy
 driver:
   name: docker
 platforms:
-  - name: instance
+  - name: ubuntu-18-04
     image: ubuntu:18.04
+  - name: ubuntu-20-04
+    image: ubuntu:20.04
+  - name: ubuntu-22-04
+    image: ubuntu:22.04
 provisioner:
   name: ansible
   inventory:
