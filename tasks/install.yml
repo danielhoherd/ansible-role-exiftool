@@ -2,7 +2,7 @@
 # tasks file for danielhoherd.exiftool
 - name: test if exiftool is already installed
   register: out
-  command: exiftool -Ver
+  ansible.builtin.command: exiftool -Ver
   ignore_errors: yes
   changed_when: False
 
@@ -35,7 +35,7 @@
         copy: no
 
     - name: install exiftool
-      shell: perl Makefile.PL && make test && make install
+      ansible.builtin.shell: perl Makefile.PL && make test && make install
       args:
         chdir: "/tmp/Image-ExifTool-{{ exiftool_version }}/"
       become: true
