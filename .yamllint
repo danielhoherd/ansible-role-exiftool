@@ -15,3 +15,6 @@ rules:
   comments: disable
   line-length: disable
   truthy: disable
+
+skip_list:
+  - fqcn-builtins
