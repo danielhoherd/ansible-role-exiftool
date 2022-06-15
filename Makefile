@@ -17,15 +17,15 @@ test: requirements ## Run tests
 
 .PHONY: test-ubuntu-18-04
 test-ubuntu-18-04: requirements ## Run tests on ubuntu-18-04
-	poetry run molecule test -s ubuntu-18-04
+	poetry run molecule test --platform-name=ubuntu-18-04
 
 .PHONY: test-ubuntu-20-04
 test-ubuntu-20-04: requirements ## Run tests on ubuntu-20-04
-	poetry run molecule test -s ubuntu-20-04
+	poetry run molecule test --platform-name=ubuntu-20-04
 
 .PHONY: test-ubuntu-22-04
 test-ubuntu-22-04: requirements ## Run tests on ubuntu-22-04
-	poetry run molecule test -s ubuntu-22-04
+	poetry run molecule test --platform-name=ubuntu-22-04
 
 .PHONY: requirements
 requirements: .requirements ## Install software requirements
@@ -34,9 +34,9 @@ requirements: .requirements ## Install software requirements
 	poetry install
 	touch .requirements
 
-.PHONY: poetry-clean
-clean: ## Destroy poetry virtual environment
-	poetry env list 2>/dev/null | awk '{print $$1}' | xargs -n1 poetry env remove || true
+.PHONY: clean
+clean: ## Destroy poetry virtual environment and remove downloaded files
+	poetry env list 2>/dev/null | awk '{print $$1}' | xargs -r -n1 poetry env remove || true
 	rm -f poetry.lock
 	find $$PWD -name 'Image-ExifTool*.tar.gz' -delete
 	rm -f .requirements .install-hooks
