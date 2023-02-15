@@ -1,6 +1,6 @@
 ---
 # tasks file for danielhoherd.exiftool
-- name: test if exiftool is already installed
+- name: Test if exiftool is already installed
   register: out
   command: exiftool -Ver
   ignore_errors: yes
@@ -11,8 +11,10 @@
     installed_version: "{{ out.stdout }}"
   when: out.rc == 0
 
-- block:
-    - name: set exiftool checksum
+- name: "Download and install exiftool"
+  when: ( installed_version | default('0.0.1') ) is not version(exiftool_version, '==')
+  block:
+    - name: Set exiftool checksum
       set_fact:
         exiftool_checksum: "sha1:{{ exiftool_checksums[exiftool_version] }}"
       when:
@@ -21,29 +23,30 @@
         - exiftool_version in exiftool_checksums
         - ansible_version.major >= 2
 
-    - name: download exiftool archive
+    - name: Download exiftool archive
       get_url:
-        url: https://exiftool.org/Image-ExifTool-{{ exiftool_version }}.tar.gz
+        url: https://exiftool.org/Image-ExifTool-{{ exiftool_checksum }}.tar.gz
         dest: /tmp
+        mode: 0644
         checksum: "{{ exiftool_checksum|default(omit) }}"
 
-    - name: unarchive exiftool archive
+    - name: Unarchive exiftool archive
       unarchive:
         src: "/tmp/Image-ExifTool-{{ exiftool_version }}.tar.gz"
         mode: 0644
         dest: /tmp
         copy: no
 
-    - name: install exiftool
+    - name: Install exiftool
       shell: perl Makefile.PL && make test && make install
       args:
         chdir: "/tmp/Image-ExifTool-{{ exiftool_version }}/"
       become: true
+      changed_when: always
 
-    - name: remove tmp files
+    - name: Remove tmp files
       file:
         path: "/tmp/Image-ExifTool-{{ exiftool_version }}.tar.gz"
         state: absent
         recurse: no
       become: true
-  when: ( installed_version | default('0.0.1') ) is not version(exiftool_version, '==')

@@ -1,1 +1,13 @@
-.yamllint
+---
+# https://ansible-lint.readthedocs.io/configuring
+
+exclude_paths:
+  - venv
+
+skip_list:
+  - experimental  # all rules tagged as experimental
+  - fqcn-builtins  # Use FQCN for builtin actions.
+
+warn_list:
+  - var-spacing
+  - yaml

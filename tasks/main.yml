@@ -1,4 +1,6 @@
 ---
-- include_tasks: check_vars.yml
+- name: "Include check_vars.yml"
+  include_tasks: check_vars.yml
 
-- include_tasks: install.yml
+- name: "Include install.yml"
+  include_tasks: install.yml

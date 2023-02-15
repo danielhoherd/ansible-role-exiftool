@@ -1,5 +1,5 @@
 ---
-- name: check for checksum
+- name: Check for checksum
   fail:
     msg: >
       There is no sha256 checksum defined for version {{ exiftool_version }} in
