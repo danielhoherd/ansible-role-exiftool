@@ -6,8 +6,6 @@ dependency:
 driver:
   name: docker
 platforms:
-  - name: ubuntu-18-04
-    image: ubuntu:18.04
   - name: ubuntu-20-04
     image: ubuntu:20.04
   - name: ubuntu-22-04
@@ -22,13 +20,9 @@ provisioner:
     defaults:
       stdout_callback: yaml
       callbacks_enabled: profile_roles, profile_tasks
-  lint:
-    name: ansible-lint
 verifier:
   name: testinfra
   options:
     s: yes
     # drop 'molecule verify' to pdb on failure - https://github.com/ansible-community/molecule/issues/2968#issuecomment-851609271
     # pdb: true
-  lint:
-    name: flake8
