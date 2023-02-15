@@ -30,7 +30,7 @@ test-ubuntu-22-04: requirements ## Run tests on ubuntu-22-04
 .PHONY: requirements
 requirements: .requirements ## Install software requirements
 .requirements:
-	pip3 install --user --upgrade "poetry>=1.1.13"
+	pip3 install --user --upgrade "poetry>=1.3.2"
 	poetry install
 	touch .requirements
 
