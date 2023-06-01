@@ -7,6 +7,5 @@
       version.
   when:
     - ansible_version.major >= 2
-    - exiftool_verify_checksum|bool
     - exiftool_checksum is not defined
     - exiftool_version not in exiftool_checksums

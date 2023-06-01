@@ -18,14 +18,13 @@
       set_fact:
         exiftool_checksum: "sha1:{{ exiftool_checksums[exiftool_version] }}"
       when:
-        - exiftool_verify_checksum | bool
         - exiftool_checksum is not defined
         - exiftool_version in exiftool_checksums
         - ansible_version.major >= 2
 
     - name: Download exiftool archive
       get_url:
-        url: https://exiftool.org/Image-ExifTool-{{ exiftool_checksum }}.tar.gz
+        url: "https://exiftool.org/Image-ExifTool-{{ exiftool_version }}.tar.gz"
         dest: /tmp
         mode: 0644
         checksum: "{{ exiftool_checksum|default(omit) }}"
@@ -42,7 +41,7 @@
       args:
         chdir: "/tmp/Image-ExifTool-{{ exiftool_version }}/"
       become: true
-      changed_when: always
+      changed_when: true
 
     - name: Remove tmp files
       file:

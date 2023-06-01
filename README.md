@@ -10,10 +10,9 @@ Ansible 2.x
 
 # Role Variables
 
-| Variable                   | Description | Default |
-| -------------------------- | ----------- | ------- |
-| `exiftool_version`         |             | 12.16   |
-| `exiftool_verify_checksum` |             | true    |
+| Variable           | Description | Default |
+| ------------------ | ----------- | ------- |
+| `exiftool_version` |             | 12.60   |
 
 # Dependencies
 
