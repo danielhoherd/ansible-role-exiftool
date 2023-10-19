@@ -3,7 +3,7 @@
 *.pyc
 *.retry
 *.sw?
-*tar.gz
+*tar.gz*
 .DS_Store
 .idea
 .install-hooks

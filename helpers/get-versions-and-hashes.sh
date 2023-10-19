@@ -3,7 +3,7 @@
 [[ "${OSTYPE}" =~ ^linux ]] || { echo "We need linux for gnu-stat." ; exit 1 ; }
 
 # https://exiftool.org/history.html
-for X in 12.{42..60} ; do
+for X in 12.{68..80} ; do
   grep "\s\+$X:" "${0%/*}/../vars/main.yml" && continue
   file="Image-ExifTool-$X.tar.gz"
   wget -q "https://exiftool.org/$file" || continue

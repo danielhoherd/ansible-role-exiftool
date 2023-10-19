@@ -15,9 +15,9 @@ install-hooks: .install-hooks ## Install git hooks
 test: requirements ## Run tests
 	poetry run molecule test --all
 
-.PHONY: test-ubuntu-18-04
-test-ubuntu-18-04: requirements ## Run tests on ubuntu-18-04
-	poetry run molecule test --platform-name=ubuntu-18-04
+.PHONY: test-debian-12
+test-debian-12: requirements ## Run tests on debian-12
+	poetry run molecule test --platform-name=debian-12
 
 .PHONY: test-ubuntu-20-04
 test-ubuntu-20-04: requirements ## Run tests on ubuntu-20-04

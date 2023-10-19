@@ -2,7 +2,7 @@
 # tasks file for danielhoherd.exiftool
 - name: Test if exiftool is already installed
   register: out
-  command: exiftool -Ver
+  command: exiftool -ver
   ignore_errors: yes
   changed_when: False
 
@@ -27,7 +27,7 @@
         url: "https://exiftool.org/Image-ExifTool-{{ exiftool_version }}.tar.gz"
         dest: /tmp
         mode: 0644
-        checksum: "{{ exiftool_checksum|default(omit) }}"
+        checksum: "{{ exiftool_checksum | default(omit) }}"
 
     - name: Unarchive exiftool archive
       unarchive:
