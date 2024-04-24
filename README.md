@@ -12,7 +12,7 @@ Ansible 2.x
 
 | Variable           | Description | Default |
 | ------------------ | ----------- | ------- |
-| `exiftool_version` |             | 12.60   |
+| `exiftool_version` |             | 12.74   |
 
 # Dependencies
 
