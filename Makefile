@@ -2,7 +2,7 @@
 
 .PHONY: help
 help: ## Print Makefile help.
-	@grep -hE '^[a-z0-9A-Z._-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-18s\033[0m %s\n", $$1, $$2}'
+	@grep -hE '^[a-z0-9A-Z._-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[1;36m%-18s\033[0m %s\n", $$1, $$2}'
 
 .PHONY: install-hooks
 install-hooks: .install-hooks ## Install git hooks
